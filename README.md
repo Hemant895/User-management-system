@@ -1,27 +1,70 @@
-# UserManagementSystem
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.2.
+# Angular User Management System
+// =============================================================
+This project is a simple user management system built using Angular 14.It allows you to create, edit, and delete user records. The project uses Angular's reactive forms for user input validation and API calls to interact with a backend server. utilizing Angular forms, routing, and HTTP client to interact with a RESTful API.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
 
-## Code scaffolding
+- User List: Display a list of users fetched from the API also Edit and Delete User data.
+- User Upsert: Add or update user details.
+- Real-time Edit and Delete: Update and delete users in real-time.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Technologies Used
 
-## Build
+- Angular 14
+- Node js RESTful API.
+- Express js for server side implementation
+- TailWind Css for UI/UX
+- Angular Forms
+- Angular Routing
+- Angular HTTP Client
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## Setup and Installation
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Clone the repository:
 
-## Running end-to-end tests
+    ```bash
+    git clone https://github.com/yourusername/user-management-system.git
+    ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+2. Navigate to the project directory:
 
-## Further help
+    ```bash
+    cd user-management-system
+    ```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+3. Install dependencies:
+
+    ```bash
+    npm install
+    ```
+
+4. Run the application:
+
+    ```bash
+    ng serve
+    ```
+
+5. Open your browser and navigate to `http://localhost:4200/` to view the app.
+
+## API Endpoints
+
+- `GET /users/userlist`: Retrieve all users
+- `POST /users/createuser`: Add a new user
+- `PUT /users/:id`: Update an existing user
+- `DELETE /users/:id`: Delete a user
+
+## Usage
+
+1. **View Users**: Navigate to the User List to view all users.
+2. **Add User**: Navigate to the User Upsert page and fill out the form to add a new user.
+3. **Edit User**: Click the Edit button next to a user to edit their details.
+4. **Delete User**: Click the Delete button next to a user to remove them from the list.
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+
