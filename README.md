@@ -1,6 +1,6 @@
 
 # Angular User Management System
-// =============================================================
+
 This project is a simple user management system built using Angular 14.It allows you to create, edit, and delete user records. The project uses Angular's reactive forms for user input validation and API calls to interact with a backend server. utilizing Angular forms, routing, and HTTP client to interact with a RESTful API.
 
 
