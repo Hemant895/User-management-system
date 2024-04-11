@@ -1,0 +1,167 @@
+<p-toast></p-toast>
+<div
+  class="max-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12"
+>
+  <div class="relative py-3 sm:max-w-xl sm:mx-auto">
+    <div
+      class="relative px-4 py-10 bg-white mx-8 md:mx-0 shadow rounded-3xl sm:p-10"
+    >
+      <div class="max-w-md mx-auto">
+        <div class="flex items-center space-x-5">
+          <!-- <div class="h-14 w-14 bg-yellow-200 rounded-full flex flex-shrink-0 justify-center items-center text-yellow-500 text-2xl font-mono">i</div> -->
+          <div
+            class="block pl-2 font-semibold text-xl self-start text-gray-700 w-[500px]"
+          >
+            <h2 class="leading-relaxed">Create new user</h2>
+          </div>
+        </div>
+        <form [formGroup]="userForm">
+          <div class="divide-y divide-gray-200">
+            <div
+              class="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7"
+            >
+              <div class="flex flex-col">
+                <label class="leading-loose">First Name</label>
+                <input
+                  type="text"
+                  formControlName="firstname"
+                  class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                  placeholder="type here"
+                  [ngClass]="{ 'is-invalid': submitted && f.firstname.errors }"
+                />
+                <div
+                  *ngIf="
+                    userForm.get('firstname').touched &&
+                    userForm.get('firstname').errors?.required
+                  "
+                  class="invalid-feedback"
+                >
+                  <p class="mt-2 text-sm text-green-600 dark:text-green-500">
+                    <span class="font-medium">FirstName is required</span>
+                  </p>
+                </div>
+              </div>
+              <div class="flex flex-col">
+                <label class="leading-loose">Last Name</label>
+                <input
+                  type="text"
+                  formControlName="lastname"
+                  [ngClass]="{ 'is-invalid': submitted && f.lastname.errors }"
+                  class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                  placeholder="type here"
+                />
+                <div
+                  *ngIf="
+                    userForm.get('lastname').touched &&
+                    userForm.get('lastname').errors?.required
+                  "
+                  class="invalid-feedback"
+                >
+                  <p class="mt-2 text-sm text-green-600 dark:text-green-500">
+                    <span class="font-medium">lastName is required</span>
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex flex-col">
+                <label class="leading-loose">Email</label>
+                <input
+                  type="email"
+                  formControlName="email"
+                  [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+                  class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                  placeholder="Example@gmail.com"
+                />
+                <div
+                  *ngIf="
+                    userForm.get('email').touched &&
+                    userForm.get('email').hasError('email')
+                  "
+                  class="invalid-feedback"
+                >
+                  <p class="mt-2 text-sm text-green-600 dark:text-green-500">
+                    <span class="font-medium"
+                      >Please enter a valid email address.</span
+                    >
+                  </p>
+                </div>
+                <div
+                  *ngIf="
+                    userForm.get('email').touched &&
+                    userForm.get('email').errors?.required
+                  "
+                  class="invalid-feedback"
+                >
+                  <p class="mt-2 text-sm text-green-600 dark:text-green-500">
+                    <span class="font-medium">Email is required.</span>
+                  </p>
+                </div>
+              </div>
+              <div class="flex flex-col">
+                <label class="leading-loose">Phone No</label>
+                <input
+                  type="number"
+                  formControlName="number"
+                  [ngClass]="{ 'is-invalid': submitted && f.number.errors }"
+                  class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                  placeholder="type here"
+                />
+                <div
+                  *ngIf="f.number.touched && f.number.invalid"
+                  class="invalid-feedback"
+                >
+                  <p class="mt-2 text-sm text-green-600 dark:text-green-500">
+                    <span class="font-medium" *ngIf="f.number.errors.required">
+                      Mobile Number is required.</span
+                    >
+                    <span class="font-medium" *ngIf="f.number.errors.pattern">
+                      Please enter a valid 10-digit phone number.</span
+                    >
+                  </p>
+                </div>
+              </div>
+              <div class="flex flex-col">
+                <label class="leading-loose">Address</label>
+                <input
+                  type="text"
+                  formControlName="address"
+                  [ngClass]="{ 'is-invalid': submitted && f.address.errors }"
+                  class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                  placeholder="address"
+                />
+                <div
+                  *ngIf="
+                    userForm.get('address').touched &&
+                    userForm.get('address').errors?.required
+                  "
+                  class="invalid-feedback"
+                >
+                  <p class="mt-2 text-sm text-green-600 dark:text-green-500">
+                    <span class="font-medium">Address is required</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="pt-4 flex items-center space-x-4">
+              <button
+                (click)="onSubmit()"
+                class="bg-blue-500 flex justify-center items-center hover:bg-sky-950 w-full text-white px-4 py-3 rounded-md focus:outline-none"
+              >
+                Create
+              </button>
+            </div>
+            <div class="pt-4 flex items-center space-x-4">
+              <button
+                routerLink="/userupsert/userlist"
+                class="bg-blue-500 flex justify-center hover:bg-sky-950 items-center w-full text-white px-4 py-3 rounded-md focus:outline-none"
+              >
+                Go to userList
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+> <router-outlet></router-outlet>
