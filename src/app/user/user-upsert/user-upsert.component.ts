@@ -8,14 +8,12 @@ import {
 import { Router } from '@angular/router';
 import { UserService } from '../user.service';
 import { User } from '../user.model';
-import { MessageService } from 'primeng/api';
 import { ToastrService } from 'ngx-toastr';
 import { NgxSpinnerService } from 'ngx-spinner';
 @Component({
   selector: 'app-user-upsert',
   templateUrl: './user-upsert.component.html',
   styleUrls: ['./user-upsert.component.css'],
-  providers: [MessageService],
 })
 export class UserUpsertComponent implements OnInit {
   userForm: FormGroup | any;
@@ -25,7 +23,6 @@ export class UserUpsertComponent implements OnInit {
     private router: Router,
     private fb: FormBuilder,
     private userservice: UserService,
-    private messageService: MessageService,
     private toastr: ToastrService,
     private spinner: NgxSpinnerService
   ) {}

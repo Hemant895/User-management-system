@@ -3,7 +3,8 @@ import { UserService } from '../user.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
-
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
@@ -15,13 +16,16 @@ export class UserListComponent implements OnInit {
     private userservice: UserService,
     private toastr: ToastrService,
     private router:Router,
-    private spinner : NgxSpinnerService
+    private spinner : NgxSpinnerService,
+    public dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
     this.getUserList();
   }
 
+  
+  
 // get userlist data from api
   getUserList() {
     this.spinner.show()
@@ -55,7 +59,8 @@ export class UserListComponent implements OnInit {
         this.toastr.error(error);
       },
     });
-  }
+    }
+  
 
   // open modal for add user and navigate to userupsert page
   editUser(user: any): void {

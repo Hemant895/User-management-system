@@ -41,7 +41,7 @@
         <th scope="col" class="px-6 py-4 font-medium text-gray-900">Email</th>
         <th scope="col" class="px-6 py-4 font-medium text-gray-900">Number</th>
         <th scope="col" class="px-6 py-4 font-medium text-gray-900">Address</th>
-        <th scope="col" class="px-6 py-4 font-medium text-gray-900"></th>
+        <th scope="col" class="px-6 py-4 font-medium text-gray-900">Action</th>
       </tr>
     </thead>
     <tbody
@@ -65,8 +65,8 @@
           {{ item.address }}
         </td>
         <td class="px-6 py-4">
-          <div class="flex justify-center gap-4">
-            <button (click)="deleteUser(item._id)"
+          <div class="flex gap-4">
+            <button (click)="deleteUser(item._id)" 
             class="text-slate-800 hover:text-blue-600 text-sm bg-white hover:bg-slate-100 border border-slate-200 rounded-r-lg font-medium px-4 py-2 inline-flex space-x-1 items-center">
             <span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -94,3 +94,7 @@
     </tbody>
   </table>
 </div>
+
+
+
+
